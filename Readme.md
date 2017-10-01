@@ -20,18 +20,18 @@ npm run-script build
 
 provide environment variables:
 ----------------------------------------
-| EVENT_PORT=12345                     |                     
-| EVENT_HOME=/home/event/server/       |                                   
-| EVENT_CLIENT=/home/event/dist/       |                                   
-| EVENT_DB_HOST=localhost              |                            
-| EVENT_DB_PORT=23456                  |                        
-| EVENT_DB_USERNAME=NameOfDBUser       |                                   
-| EVENT_DB_PASSWORD=SaveRandomPassword |                                         
-| EVENT_DB_NAME=NameOfDBToUse          |                                
-|                                      |                                               
-| ADMIN_DB_USERNAME=MySQLAdminUser     |                                     
-| ADMIN_DB_PASSWORD=MySQLAdminPassword |                                         
-----------------------------------------
+EVENT_PORT=12345
+EVENT_HOME=/home/event/server/
+EVENT_CLIENT=/home/event/dist/
+EVENT_DB_HOST=localhost
+EVENT_DB_PORT=23456
+EVENT_DB_USERNAME=NameOfDBUser
+EVENT_DB_PASSWORD=SaveRandomPassword
+EVENT_DB_NAME=NameOfDBToUse
+
+ADMIN_DB_USERNAME=MySQLAdminUser
+ADMIN_DB_PASSWORD=MySQLAdminPassword
+
 
 node server/setup.js
 node server/index.js
