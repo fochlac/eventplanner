@@ -1,0 +1,72 @@
+@import '../../root/variables.less';
+
+.postMenu {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border: solid 1px @colorg1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 7px;
+    background: @colorg3;
+    user-select: none;
+    box-shadow: @tinyShadowDown;
+    border-top-right-radius: @borderRadius;
+    border-bottom-left-radius: @borderRadius;
+
+    & .menuItem{
+        position: relative;
+        padding: 1px 5px;
+
+        &:hover:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: black;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+    }
+}
+
+.menuIcon {
+    align-self: flex-end;
+    padding: 3px 5px;
+}
+
+.entryList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.entry {
+    margin: 3px 5px 3px 30px;
+    display: block;
+    text-align: end;
+    cursor: pointer;
+}
+
+.submenuTop {
+    padding: 1px 5px;
+}
+
+.submenuIcon {
+    position: absolute;
+    margin-top: 4px;
+    width: 16px;
+    text-align: center;
+}
+
+.submenu {
+    list-style: none;
+    margin: 0px;
+    padding: 5px 0 5px 5px;
+    background: @colorg4;
+    color: @colorg1;
+}

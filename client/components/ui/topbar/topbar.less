@@ -1,0 +1,99 @@
+@import '../../root/variables.less';
+
+.topbar {
+    display: flex;
+    align-items: center;
+    height: @topBarHeight;
+    box-shadow: 0 2px 5px -3px black;
+    background: @colorg1;
+    color: @colorg4;
+    position: fixed;
+    top:0;
+    width: 100%;
+    z-index: 5;
+
+    .fa-inverse {
+        color: @colorg3;
+    }
+
+    .expanderMenu {
+        list-style: none;
+        padding: 0;
+        position: absolute;
+        margin: 0;
+        top: @topBarHeight;
+        width: 100%;
+        box-shadow: @tinyShadowDown;
+        border-top: solid 1px black;
+
+        &.minimized {
+            height: 0;
+            overflow: hidden;
+            border-top: none;
+        }
+    }
+
+    .quicklinks {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        margin-left: auto;
+
+        & > li {
+            padding: 5px;
+            position: relative;
+        }
+    }
+    .verticalSpacer {
+        width: 1px;
+        background: black;
+        height: 70%;
+        margin: 0 5px;
+    }
+
+    a {
+        color: @colorg4;
+        text-decoration: none;
+    }
+
+    .menu {
+        padding: 5px;
+        cursor: pointer;
+        margin: 0 10px 0 5px;
+    }
+
+    .menuItem {
+        background: @colorg3;
+        padding: 10px;
+
+        & > .fa {
+            margin: 0 10px 0 20px;
+        }
+
+        &:hover {
+            background: @colorg2;
+        }
+    }
+
+    .profile {
+        margin-left: 5px;
+        padding: 5px;
+    }
+    .counter {
+        background: @colorr1;
+        width: 14px;
+        display: inline-block;
+        height: 13px;
+        font-size: 12px;
+        text-align: center;
+        position: absolute;
+        right: -1px;
+        border-radius: 2px;
+        border: 1px solid @colorg1;
+        color: @colorg1;
+        font-weight: 900;
+        top: 0px;
+        padding-bottom: 1px;
+    }
+}

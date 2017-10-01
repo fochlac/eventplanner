@@ -1,0 +1,87 @@
+@import '../../root/variables.less';
+
+.pollBody {
+    list-style: none;
+    padding: 0px;
+
+    .pollListItem {
+        margin-bottom: 2px;
+        padding: 2px 0;
+
+        input {
+            margin: 0;
+            width: 20px;
+            position: relative;
+            top: 2px;
+        }
+
+        h5 {
+            margin-bottom: 2px;
+        }
+    }
+
+    .resultWrapper {
+        position: relative;
+    }
+
+    .resultBar {
+        height: 14px;
+        background: @colory1;
+        min-width: 2px;
+        margin-left: 4px;
+        display: inline-block;
+    }
+
+    .resultValue {
+        margin-right: 5px;
+        display: inline-block;
+        position: absolute;
+        left: 5px;
+        top: -2px;
+        cursor: pointer;
+
+        &:hover:after {
+            content: attr(data-users);
+            background: #074d0e;
+            display: block;
+            z-index: 1;
+            position: relative;
+            padding: 5px;
+            color: #709c3b;
+            border-radius: 2px;
+            left: 22px;
+            top: -15px;
+            border: solid 1px #17380b;
+            white-space: pre;
+        }
+    }
+}
+
+.pollFooter {
+    button {
+        margin: 0 5px;
+    }
+}
+
+.tinyPoll {
+    .pollBody {
+        width: 100%;
+    }
+
+    .resultWrapper {
+        width: 100%;
+    }
+
+    td:first-child {
+        text-align: end;
+        white-space: nowrap;
+    }
+
+    .resultBar {
+        margin-top: 2px;
+    }
+
+    .resultValue {
+        top: 0;
+    }
+}

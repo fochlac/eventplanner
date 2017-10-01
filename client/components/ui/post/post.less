@@ -1,0 +1,253 @@
+@import '../../root/variables.less';
+
+.post {
+    width: 100%;
+    margin-bottom: 10px;
+    box-shadow: inset 0 0 54px -33px @colorg3, 3px 3px 5px -4px;
+    box-sizing: border-box;
+    border-radius: @borderRadius;
+    border: solid 1px @colorg3;
+    background: @colorg4;
+    padding-bottom: 8px;
+
+    .postHeader {
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        background: @colorg3;
+        color: @colorg4;
+        border-top-left-radius: @borderRadius;
+        border-top-right-radius: @borderRadius;
+        position: relative;
+
+        a {
+            color: #709c3b;
+        }
+
+        &  > span {
+            margin-left: auto;
+        }
+    }
+
+    .postTitle {
+        margin: 0;
+
+        span {
+            color: @colorg3
+        }
+    }
+
+    .postBody {
+        padding: 10px 0;
+        margin: 0 16px;
+    }
+
+    .postComments {
+        margin: 5px 16px;
+        border-top: solid 1px @colorg3;
+    }
+
+    .comment {
+        margin-top: 15px;
+        display: flex;
+
+        .fa-inverse {
+            color: @colorg4;
+        }
+    }
+
+    .profile {
+        margin-right: 5px;
+        margin-top: -2px;
+    }
+
+    .expander {
+        margin-top: 10px;
+        display: block;
+        text-align: center;
+        cursor: pointer;
+
+        &:hover {
+            color: @colorg2;
+        }
+
+        span {
+            margin-right: 5px;
+        }
+
+        &.inline {
+            display: inline;
+            margin-left: 5px;
+            white-space: nowrap;
+        }
+    }
+
+    .addComment {
+        display: flex;
+        width: 100%;
+        justify-content: stretch;
+        margin-top: 10px;
+        flex-direction: column;
+
+        & > textarea {
+            flex-grow: 1;
+            height: 20px;
+            margin-bottom: 5px;
+            border: solid 1px @colorg3;
+            border-radius: @borderRadius;
+            font-size: 16px;
+            font-family: Raleway;
+            overflow: hidden;
+            resize: none;
+            background: @colorg5;
+
+            &:focus {
+                outline: none;
+            }
+
+            &.big {
+                height: 60px;
+            }
+        }
+    }
+
+    .body {
+        padding: 5px;
+        border-radius: @borderRadius;
+        background: #3c7524;
+    }
+
+    .taskHead {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+        i {
+            padding-left: 5px;
+        }
+        .fa-circle {
+            padding-bottom: 2px;
+        }
+    }
+
+    .newItemList {
+        list-style: none;
+        padding: 0;
+        margin: 5px 0 10px;
+
+        .newIcon {
+            color: @colory1;
+            padding-right: 5px;
+        }
+        .newTag {
+            padding-right: 5px;
+        }
+
+        li {
+            display: inline-block;
+
+            &.item:nth-child(n + 3):before {
+                content: ',';
+                padding-right: 5px;
+            }
+        }
+    }
+
+    .taskInfo {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        a {
+            padding: 4px 6px;
+            display: block;
+        }
+
+        li {
+            background: #3c7524;
+            display: inline-block;
+            margin-right: 5px;
+            margin-top: 5px;
+            border-radius: @borderRadius;
+
+            span:first-child {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .spacer {
+        margin: 0 10px;
+        width: 1px;
+        height: 55px;
+        background: @colorg3;
+    }
+
+    .file {
+        display: flex;
+        align-items: center;
+    }
+
+    .downloadIcon {
+        :first-child {
+            margin-top: -11px;
+        }
+
+        :nth-child(2) {
+            margin-top: 11px;
+        }
+    }
+
+    .fileInfo h4 {
+        margin-bottom: 10px;
+    }
+
+    .notification {
+        display: flex;
+        align-items: center;
+        padding: 5px 10px 5px 10px;
+        background: @colory3;
+        border: solid 2px  @colory1;
+        color: @font-color-dark;
+
+        .spacer {
+            background: @colory1;
+        }
+    }
+
+    .tinyPoll {
+        .votingMarker {
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            right: -2px;
+            overflow: hidden;
+
+            .fa-stack {
+                width: 18px;
+                height: 18px;
+                position: absolute;
+                top: 0;
+            }
+
+            .fa-stack-1x {
+                font-size: 11px;
+                line-height: 18px;
+            }
+
+            .fa-stack-2x {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+.dashboard {
+    height: calc(100vh ~"-" @topBarHeight);
+    box-sizing: border-box;
+    padding: 10px 5%;
+    width: 100%;
+    background: @colorg5;
+    overflow: auto;
+    margin-top: @topBarHeight;
+}
