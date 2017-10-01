@@ -11,3 +11,27 @@ The idea is to assign those tasks to participants or to allow for participants t
 In order to accomodate communication the planner will include a full fledged chat client using pushmessages and notifications.
 
 Furthermore it will include a user-dashboard featuring upcoming events, accepted tasks and warn if a task deadline is close.
+
+# Building the project
+npm install
+npm run-script build
+
+# Starting the Server
+
+provide environment variables:
+----------------------------------------
+| EVENT_PORT=12345                     |                     
+| EVENT_HOME=/home/event/server/       |                                   
+| EVENT_CLIENT=/home/event/dist/       |                                   
+| EVENT_DB_HOST=localhost              |                            
+| EVENT_DB_PORT=23456                  |                        
+| EVENT_DB_USERNAME=NameOfDBUser       |                                   
+| EVENT_DB_PASSWORD=SaveRandomPassword |                                         
+| EVENT_DB_NAME=NameOfDBToUse          |                                
+|                                      |                                               
+| ADMIN_DB_USERNAME=MySQLAdminUser     |                                     
+| ADMIN_DB_PASSWORD=MySQLAdminPassword |                                         
+----------------------------------------
+
+node server/setup.js
+node server/index.js
