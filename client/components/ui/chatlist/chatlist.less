@@ -6,20 +6,23 @@
     margin: 0;
     width: 100%;
 
-    & > a > li {
-        display: flex;
-        margin: 10px;
-        padding-bottom: 10px;
-        align-items: center;
-        border-bottom: 1px solid #17380b;
-        cursor: pointer;
+    & > a {
+        & > li {
+            display: flex;
+            margin: 10px;
+            padding-bottom: 10px;
+            align-items: center;
+            border-bottom: 1px solid #17380b;
+            cursor: pointer;
 
-        &:after {
-            content: '\f054';
-            margin-left: auto;
+            &:after {
+                content: '\f054';
+                margin-left: auto;
+                padding-left: 10px;
+            }
         }
 
-        &:last-child {
+        &:last-child > li {
             border-bottom: none;
         }
     }
@@ -27,10 +30,6 @@
     .content {
         margin-left: 10px;
         width: 100%;
-        
-        & > p {
-            display: flex;
-        }
     }
     .subtitle {
         font-size: 0.8em;
@@ -39,10 +38,26 @@
     }
 
     .usercount {
-        margin-left: auto;
+        margin-left: 10px;
         margin-right: 10px;
         font-size: 0.8em;
         color: #ccc;
+    }
+
+    .multiple .profileImage {
+        height: 1.25em;
+        width: 1.25em;
+        border-width: 1px;
+    }
+
+    .multiple {
+        display: flex;
+        min-width: 44px;
+        height: 44px;
+        flex-wrap: wrap;
+    }
+    .time {
+        white-space: nowrap;
     }
 }
 

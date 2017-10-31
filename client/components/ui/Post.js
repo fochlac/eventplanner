@@ -20,7 +20,6 @@ const mapStateToProps = (state, ownProps) => {
         files: state.files,
         polls: state.polls,
         tasks: state.tasks,
-        event: state.events[item.event],
         children: ownProps.children,
         users: state.users,
         user: state.user,

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Message from './Message.jsx';
-import './chat.less';
+import './chatdetail.less';
+import Breadcrumb from '../Breadcrumb.js';
 
-export default class Chat extends React.Component {
+export default class ChatDetail extends React.Component {
     constructor(props) {
         super();
     }
@@ -15,15 +16,15 @@ export default class Chat extends React.Component {
                 <div className="chatbar">
                     <span>
                         {
-                            chat.name 
-                            ? chat.name 
+                            chat.parent 
+                            ? <Breadcrumb parent={chat.parent} /> 
                             : (chat.users.slice(0,3)
                                 .filter(id => id !== this.props.user.id)
                                 .map(id => this.props.users[id].name).join(', ') 
                             + ((chat.users.length > 3) ? ', ...' : ''))
                         }
                     </span>
-                    <Link to="/chats">Zurück</Link>
+                    <Link to="/chat" className="fa fa-chevron-left"> Zurück</Link>
                 </div>
                 {
                     chat.messages.reduce((acc, item, index) => {

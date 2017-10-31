@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import Chats from './chats/Chats.jsx';
+import Chat from './chat/Chat.jsx';
 import {markItemsSeen} from '../actions.js';
 
 const mapStateToProps = (state, ownProps) => {
@@ -11,4 +11,4 @@ const mapStateToProps = (state, ownProps) => {
     }
 };
 
-export default connect(mapStateToProps, {markItemsSeen})(Chats);
+export default connect(mapStateToProps, {markItemsSeen})(Chat);

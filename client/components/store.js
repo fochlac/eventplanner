@@ -57,8 +57,7 @@ export const store = configureStore({
     chats: [
         {
             id: 0,
-            users: [0,1],
-            name: undefined,
+            users: [0,2],
             virgin: true,
             messages: [{
                 user: 2,
@@ -75,7 +74,6 @@ export const store = configureStore({
         },{
             id: 1,
             users: [0,2],
-            name: 'Defeat Sauron',
             virgin: true,
             messages: [{
                 user: 2,
@@ -84,18 +82,17 @@ export const store = configureStore({
                 virgin: true
             },{
                 user: 2,
-                timestamp: 1504131317669,
+                timestamp: 1504131417669,
                 message: 'Look, daddy`s back. And hes got a level up!',
                 virgin: true
             }],
             parent: {type: 'event', id: 0}
         },{
             id: 2,
-            users: [0,2],
-            name: 'Get to Rivendell',
+            users: [0,1,2],
             virgin: false,
             messages: [{
-                user: 0,
+                user: 1,
                 timestamp: 1504131112669,
                 message: 'BRING THE RING!!!!',
                 virgin: false
@@ -140,11 +137,11 @@ export const store = configureStore({
             creation: yesterday,
             name: 'Get to Rivendell.',
             description: 'Get to Rivendell. Meet Elrond, talk to Humans, Elves and Dwarves and decide about what to do about the damned ring.',
-            event: 0,
             completed: false,
             comments: [0],
             commentCount: 1,
             virgin: true,
+            parent: {type: 'event', id: 0},
             files: [0, 1],
             polls: [1],
             tasks: [2],
@@ -170,7 +167,7 @@ export const store = configureStore({
         },
         1: {
             id: 1,
-            event: 0,
+            parent: {type: 'event', id: 0},
             warning: yesterday,
             deadline: now,
             creation: yesterday,
@@ -187,7 +184,7 @@ export const store = configureStore({
         },
         2: {
             id: 2,
-            event: 0,
+            parent: {type: 'task', id: 0},
             warning: tomorrow2,
             deadline: tomorrow3,
             creation: yesterday,
@@ -237,7 +234,7 @@ export const store = configureStore({
             comments: [],
             url: 'https://www.fochlac.com/files/map.jpg',
             commentCount: 0,
-            event: 0,
+            parent: {type: 'task', id: 0},
             creation: yesterday,
             virgin: true
         },
@@ -248,7 +245,7 @@ export const store = configureStore({
             comments: [],
             url: 'https://www.fochlac.com/files/map.jpg',
             commentCount: 0,
-            event: 0,
+            parent: {type: 'task', id: 0},
             creation: yesterday,
             virgin: true
         }
@@ -259,7 +256,7 @@ export const store = configureStore({
             description: 'Achtung, schwarze Reiter gesichtet, bitte vorsichtig reisen!',
             comments: [],
             commentCount: 0,
-            event: 0,
+            parent: {type: 'task', id: 0},
             warning: yesterday,
             deadline: now,
             creation: yesterday,
@@ -281,7 +278,7 @@ export const store = configureStore({
             id: 0,
             name: 'Who do we take along?',
             description: 'Who do we want to send to mordor?',
-            event: 0,
+            parent: {type: 'task', id: 0},
             options: [{
                 name: 'Gandalf',
                 users: [1,2]
@@ -313,7 +310,7 @@ export const store = configureStore({
         1: {
             id: 1,
             name: 'How do we get there?',
-            event: 0,
+            parent: {type: 'task', id: 0},
             options: [{
                 name: 'Using Eagles',
                 users: [1,2]
@@ -338,10 +335,13 @@ export const store = configureStore({
             id: 2,
             name: 'How do we get there?',
             description: 'How do we want to go to Bree? We could use ponies or simply walk through mirkwood',
-            event: 0,
+            parent: {type: 'task', id: 2},
             options: [{
                 name: 'Using horses',
                 users: [1,0]
+            }, {
+                name: 'Walking',
+                users: [2]
             }],
             comments: [0],
             commentCount: 0,

@@ -6,7 +6,7 @@ import {} from '../actions.js';
 const mapStateToProps = (state, ownProps) => {
     return {
     	self: state.user.id,
-        chats: state.chats,
+        chats: state.chats.map(chat => (chat.parent ? Object.assign({}, chat, {name: state[chat.parent.type + 's'][chat.parent.id].name}) : chat)),
         users: state.users
     };
 }

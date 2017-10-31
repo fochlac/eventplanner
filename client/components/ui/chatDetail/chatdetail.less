@@ -10,12 +10,17 @@
         padding-bottom: 5px;
         border-bottom: solid 1px #17380b;
         display: flex;
+        align-items: center;
 
         span {
-            margin: 0 auto;
+            text-align: left;
+            a {
+                white-space: nowrap;
+                display: inline-block;
+            }
         }
-        a {
-            float: right;
+        & > a {
+            margin-left: auto;
         }
     }
 
@@ -34,6 +39,9 @@
 
         &:first-child .content{
             border-top-right-radius: 5px;
+        }
+        .profileImage {
+            min-width: 2.5em;
         }
 
     }

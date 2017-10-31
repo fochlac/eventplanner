@@ -1,11 +1,11 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
-import Chat from '../../ui/Chat.js';
+import ChatDetail from '../../ui/ChatDetail.js';
 import ChatList from '../../ui/ChatList.js';
-import './chats.less';
+import './chat.less';
 
 
-export default class Chats extends React.Component {
+export default class Chat extends React.Component {
     constructor(props) {
         super();
         this.state = {
@@ -29,7 +29,7 @@ export default class Chats extends React.Component {
                 </div>
                 <div className="chatFrame">
                     {
-                        chat ? <Chat id={this.state.currentChat} /> : null
+                        chat ? <ChatDetail id={this.state.currentChat} /> : null
                     }
                 </div>
             </div>

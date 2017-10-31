@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Chat from './chat/Chat.jsx';
+import ChatDetail from './chatDetail/ChatDetail.jsx';
 import {} from '../actions.js';
 
 const mapStateToProps = (state, ownProps) => {
@@ -12,4 +12,4 @@ const mapStateToProps = (state, ownProps) => {
     };
 }
 
-export default connect(mapStateToProps, {})(Chat);
+export default connect(mapStateToProps, {})(ChatDetail);

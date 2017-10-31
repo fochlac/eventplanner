@@ -47,7 +47,7 @@ export default class Topbar extends React.Component {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/chats">
+                        <Link to="/chat">
                             <span className="fa fa-2x fa-comments-o" />
                             {
                                 this.props.newMessages

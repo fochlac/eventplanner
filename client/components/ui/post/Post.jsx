@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Breadcrumb from '../Breadcrumb.js';
 import Comment from './Comment.jsx';
 import AddComment from './AddComment.jsx';
 import Task from './Task.jsx';
@@ -68,18 +69,13 @@ export default class Post extends React.Component {
         return (
             <div className="post" id={'post_' + this.props.type + this.props.id}>
                 <div className="postHeader">
-                    <h3 className="breadcrumb">
-                        <Link to={'/event/' + post.event}>
-                            {this.props.event.name}
-                        </Link>
+                    <h5 className="breadcrumb">
                         {
                             post.parent
-                            ? <Link to={`/${post.parent.type}/${post.parent.id}`}>
-                                {this.props[post.parent.type + 's'][post.parent.id].name}
-                            </Link>
-                            : null
+                            ? <Breadcrumb parent={post.parent} />
+                            : <Link>{this.props.type + '/' + this.props.id}</Link>
                         }
-                    </h3>
+                    </h5>
                     <Menu menu={menu} />
                 </div>
                 <div className="postBody">
