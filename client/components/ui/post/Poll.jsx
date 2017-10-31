@@ -19,7 +19,7 @@ export default class Poll extends React.Component {
         return (
             <div className="tinyPoll">
                 <div className="pollHead">
-                    <Link to={'/poll/' + this.props.id}><h3>{(!voted ? 'Neue Umfrage: ' : '') + poll.title}</h3></Link>
+                    <Link to={'/poll/' + this.props.id}><h3>{(!voted ? 'Neue Umfrage: ' : '') + poll.name}</h3></Link>
                     {
                         (poll.description && poll.description.length)
                         ? <span>{poll.description.slice(0, (this.state.showAll ? undefined : this.state.contentMaxLength))}</span>
@@ -39,7 +39,7 @@ export default class Poll extends React.Component {
                                 return (
                                     <tr key={index} className="pollListItem">
                                         <td>
-                                            <h5 className="inlineBlock">{option.title}</h5>
+                                            <h5 className="inlineBlock">{option.name}</h5>
                                         </td>
                                         <td className="resultWrapper">
                                             <span className="resultBar" style={{width: 'calc(' + Math.floor(option.users.length / voteCount * 100) + '% - 20px)'}} ></span>

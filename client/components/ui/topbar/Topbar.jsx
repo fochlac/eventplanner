@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ProfileImage from '../ProfileImage.js';
 import './topbar.less';
 
 export default class Topbar extends React.Component {
@@ -22,20 +23,7 @@ export default class Topbar extends React.Component {
         return (
             <div className="topbar">
                 <Link to="/user" className="profile">
-                {
-                    this.props.user.profileImage
-                    ?
-                        <div className="imageWrapper profileImage">
-                            <img src="this.props.user.profileImage " title={this.props.user.name}/>
-                        </div>
-                    :
-                        <div className="noProfileImage" title={this.props.user.name}>
-                            <span className="fa-stack fa-lg">
-                              <i className="fa fa-circle fa-stack-2x"></i>
-                              <i className="fa fa-user fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </div>
-                }
+                <ProfileImage />
                 </Link>
                 <ul className="quicklinks">
                     <li>
@@ -59,7 +47,7 @@ export default class Topbar extends React.Component {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/chat">
+                        <Link to="/chats">
                             <span className="fa fa-2x fa-comments-o" />
                             {
                                 this.props.newMessages

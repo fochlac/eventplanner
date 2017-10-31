@@ -25,11 +25,18 @@
         width: 100%;
         box-shadow: @tinyShadowDown;
         border-top: solid 1px black;
+        li {
+            height: 39px;
+            transition: height 0.15s linear;
+        }
 
         &.minimized {
-            height: 0;
             overflow: hidden;
             border-top: none;
+
+            li {
+                height: 0px;
+            }
         }
     }
 
@@ -65,7 +72,9 @@
 
     .menuItem {
         background: @colorg3;
-        padding: 10px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
 
         & > .fa {
             margin: 0 10px 0 20px;

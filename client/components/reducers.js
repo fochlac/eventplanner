@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import messages from './reducers/messages.js';
+import chats from './reducers/chats.js';
 import items from './reducers/items.js';
 import events from './reducers/events.js';
 import user from './reducers/user.js';
@@ -11,7 +11,7 @@ import polls from './reducers/polls.js';
 import notifications from './reducers/notifications.js';
 
 const reducers = combineReducers({
-    messages,
+    chats,
     items,
     events,
     user,

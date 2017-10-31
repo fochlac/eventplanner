@@ -37,8 +37,6 @@ export default class Post extends React.Component {
 
         let body;
 
-        console.log(this.props);
-
         if (this.props.error) {
             return null;
         }

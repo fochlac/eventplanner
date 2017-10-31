@@ -70,7 +70,7 @@ export default class Post extends React.Component {
         return (
             <div className="poll">
                 <div className="pollHead">
-                    <Link to={'/poll/' + this.props.id}><h3>{poll.title}</h3></Link>
+                    <Link to={'/poll/' + this.props.id}><h3>{poll.name}</h3></Link>
                     {
                         (poll.description && poll.description.length)
                         ? <span>{poll.description.slice(0, (this.state.showAll ? undefined : this.state.contentMaxLength))}</span>
@@ -89,7 +89,7 @@ export default class Post extends React.Component {
                                 <li key={index} className="pollListItem">
                                     <input onClick={evt => this.toggleSelection(index, evt.target.checked)} type={poll.multiple ? 'checkbox' : 'radio'} name={'pollVotes' + this.props.pollId} id={this.props.pollId + '-option-' + index} checked={option.users.includes(this.props.user.id) ? 'checked' : null} disabled={this.state.editable ? null : 'disabled'}/>
                                     <label htmlFor={this.props.pollId + '-option-' + index}>
-                                        <h5 className="inlineBlock">{option.title}</h5>
+                                        <h5 className="inlineBlock">{option.name}</h5>
                                     </label>
                                     {
                                         (this.state.showResults)

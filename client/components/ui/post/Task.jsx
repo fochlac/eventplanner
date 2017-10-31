@@ -27,7 +27,7 @@ export default class Post extends React.Component {
         return (
             <div className="task">
                 <div className="taskHead">
-                    <Link to={'/task/' + this.props.id}><h3>{task.shortDescription}</h3></Link>
+                    <Link to={'/task/' + this.props.id}><h3>{task.name}</h3></Link>
                     <i className={(task.complete ? 'fa-check-square-o' : 'fa-square-o') + ' fa push-right'}></i>
                     <i className={taskStatus + ' fa fa-circle'}></i>
                 </div>

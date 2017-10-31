@@ -54,43 +54,69 @@ export const store = configureStore({
             virgin: true
         }
     ],
-    messages: [
+    chats: [
         {
-            sender: 'Gandalf',
-            timestamp: 1504131317669,
-            message: 'Run! You fools ...',
-            virgin: true
+            id: 0,
+            users: [0,1],
+            name: undefined,
+            virgin: true,
+            messages: [{
+                user: 2,
+                timestamp: 1504111317669,
+                message: 'Ask Bilbo about "The Ring"! It rocks...',
+                virgin: false
+            }, {
+                user: 0,
+                timestamp: 1504131312669,
+                message: 'Chillin in Rivendell *DealWithIt*',
+                virgin: true
+            }],
+            parent: undefined
         },{
-            sender: 'Gandalf',
-            timestamp: 1504111317669,
-            message: 'Ask Bilbo about "The Ring"! It rocks...',
-            virgin: false
-        }, {
-            sender: 'Frodo',
-            timestamp: 1504131312669,
-            message: 'Chillin in Rivendell *DealWithIt*',
-            media: '/images/1231234/chillin.jpg',
-            virgin: true
-        }, {
-            sender: 'Frodo',
-            timestamp: 1504131112669,
-            message: 'BRING THE RING!!!!',
-            media: '/images/1231234/chillin.jpg',
-            virgin: false
-        }, {
-            sender: 'Frodo',
-            timestamp: 1504131012669,
-            message: 'Cant wait to see you in Rivendell *MissingYou*',
-            media: '/images/1231234/chillin.jpg',
-            virgin: false
+            id: 1,
+            users: [0,2],
+            name: 'Defeat Sauron',
+            virgin: true,
+            messages: [{
+                user: 2,
+                timestamp: 1504131317669,
+                message: 'Run! You fools ...',
+                virgin: true
+            },{
+                user: 2,
+                timestamp: 1504131317669,
+                message: 'Look, daddy`s back. And hes got a level up!',
+                virgin: true
+            }],
+            parent: {type: 'event', id: 0}
+        },{
+            id: 2,
+            users: [0,2],
+            name: 'Get to Rivendell',
+            virgin: false,
+            messages: [{
+                user: 0,
+                timestamp: 1504131112669,
+                message: 'BRING THE RING!!!!',
+                virgin: false
+            }, {
+                user: 0,
+                timestamp: 1504131012669,
+                message: 'Cant wait to see you in Rivendell *#MissingYou#*',
+                virgin: false
+            }],
+            parent: {type: 'task', id: 0}
         }
     ],
     events: {
         0: {
             id: 0,
             name: 'Defeat Sauron',
+            description: 'Duh, we will think of something. We might just take some eagles and fly over to morder. Or we could use a giant catapult. Or we just use the ring ourselves. Whatever, we will find a way. Or not.',
+            subtitle: 'Well, destroy his ring...',
+            headerImage: '/static/images/test2.jpg',
             tasks: [0, 1],
-            notes: [],
+            notifications: [],
             comments: [],
             participating: [],
             interested: [],
@@ -98,11 +124,12 @@ export const store = configureStore({
             invited: [0, 1, 2],
             warning: now,
             date: {
-                start: tomorrow, 
+                start: tomorrow,
                 end: tomorrow2
             },
             creation: yesterday,
-            polls: []
+            polls: [0],
+            files: []
         }
     },
     tasks: {
@@ -111,7 +138,7 @@ export const store = configureStore({
             warning: now,
             deadline: tomorrow2,
             creation: yesterday,
-            shortDescription: 'Get to Rivendell.',
+            name: 'Get to Rivendell.',
             description: 'Get to Rivendell. Meet Elrond, talk to Humans, Elves and Dwarves and decide about what to do about the damned ring.',
             event: 0,
             completed: false,
@@ -119,7 +146,7 @@ export const store = configureStore({
             commentCount: 1,
             virgin: true,
             files: [0, 1],
-            polls: [2],
+            polls: [1],
             tasks: [2],
             notifications: [1],
             items: [
@@ -147,7 +174,7 @@ export const store = configureStore({
             warning: yesterday,
             deadline: now,
             creation: yesterday,
-            shortDescription: 'Throw the Ring into Mount Doom.',
+            name: 'Throw the Ring into Mount Doom.',
             description: 'Walk to the east across the mountains, follow the river, sneak past ork armies and break the black gate. Finally climb onto Mount Doom and destroy the damned Ring.',
             completed: false,
             comments: [],
@@ -164,14 +191,14 @@ export const store = configureStore({
             warning: tomorrow2,
             deadline: tomorrow3,
             creation: yesterday,
-            shortDescription: 'Sneak into Bree.',
+            name: 'Sneak into Bree.',
             description: 'Human city west of the Shire. Traditionally a place to rest weary feets, be wary of trolls.',
             completed: false,
             comments: [],
             commentCount: 0,
             virgin: true,
             files: [],
-            polls: [],
+            polls: [2],
             tasks: [],
             notifications: []
         }
@@ -182,21 +209,24 @@ export const store = configureStore({
             name: 'Frodo',
             comments: [],
             creation: yesterday,
-            events: [0]
+            events: [0],
+            profileImage: '/static/images/frodo.jpg'
         },
         1: {
             id: 1,
             name: 'Bilbo',
-            comments: [],
+            comments: [0],
             creation: yesterday,
-            events: [0]
+            events: [0],
+            profileImage: '/static/images/bilbo.jpg'
         },
         2: {
             id: 2,
             name: 'Gandalf',
             comments: [],
             creation: yesterday,
-            events: [0]
+            events: [0],
+            profileImage: '/static/images/gandalf.jpg'
         }
     },
     files: {
@@ -249,23 +279,23 @@ export const store = configureStore({
     polls: {
         0: {
             id: 0,
-            title: 'Who do we take along?',
+            name: 'Who do we take along?',
             description: 'Who do we want to send to mordor?',
             event: 0,
             options: [{
-                title: 'Gandalf',
+                name: 'Gandalf',
                 users: [1,2]
             }, {
-                title: 'Elrond',
+                name: 'Elrond',
                 users: []
             }, {
-                title: 'Legolas',
+                name: 'Legolas',
                 users: [1]
             }, {
-                title: 'Gimli',
+                name: 'Gimli',
                 users: [2]
             }, {
-                title: 'Frodo',
+                name: 'Frodo',
                 users: [2, 1]
             }],
             comments: [0],
@@ -282,13 +312,13 @@ export const store = configureStore({
         },
         1: {
             id: 1,
-            title: 'How do we get there?',
+            name: 'How do we get there?',
             event: 0,
             options: [{
-                title: 'Using Eagles',
+                name: 'Using Eagles',
                 users: [1,2]
             }, {
-                title: 'Walking',
+                name: 'Walking',
                 users: []
             }],
             comments: [],
@@ -306,15 +336,12 @@ export const store = configureStore({
         },
         2: {
             id: 2,
-            title: 'How do we get there?',
+            name: 'How do we get there?',
             description: 'How do we want to go to Bree? We could use ponies or simply walk through mirkwood',
             event: 0,
             options: [{
-                title: 'Using horses',
+                name: 'Using horses',
                 users: [1,0]
-            }, {
-                title: 'Walking',
-                users: [1]
             }],
             comments: [0],
             commentCount: 0,
@@ -324,7 +351,7 @@ export const store = configureStore({
             showResults: false,
             allowDisplayResults: true,
             allowEditResults: false,
-            users: [1,0],
+            users: [1,0,2],
             creation: yesterday,
             warning: tomorrow,
             deadline: tomorrow2

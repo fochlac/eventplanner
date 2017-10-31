@@ -1,4 +1,5 @@
 import React from 'react';
+import './profileImage.less';
 
 export default class ProfileImage extends React.Component {
     constructor(props) {
@@ -10,7 +11,7 @@ export default class ProfileImage extends React.Component {
 
         if (user.profileImage) {
             return (<div className="imageWrapper profileImage">
-                <img src="this.props.user.profileImage " title={user.name} />
+                <img src={this.props.user.profileImage} title={user.name} />
             </div>);
 
         } else {

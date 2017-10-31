@@ -1,4 +1,4 @@
-const messages = (state = [], action) => {
+const chats = (state = [], action) => {
     switch (action.type) {
         case 'ADD_MESSAGE':
             return [
@@ -24,4 +24,4 @@ const messages = (state = [], action) => {
     }
 }
 
-export default messages
+export default chats;

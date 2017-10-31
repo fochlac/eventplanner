@@ -1,0 +1,75 @@
+@import '../../root/variables.less';
+
+.chat {
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+    
+    .chatbar {
+        margin-bottom: 5px;
+        padding-bottom: 5px;
+        border-bottom: solid 1px #17380b;
+        display: flex;
+
+        span {
+            margin: 0 auto;
+        }
+        a {
+            float: right;
+        }
+    }
+
+    .message {
+        display: flex;
+        align-items: center;
+        
+        &:nth-child(n + 2) .profileImage{
+            visibility: hidden;
+        }
+
+        &:last-child .content{
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        &:first-child .content{
+            border-top-right-radius: 5px;
+        }
+
+    }
+    
+    .own .message {
+        justify-content: flex-end;
+
+        .profileImage {
+            order: 2;
+        }
+
+        .content {
+            margin-left: 0px;
+            margin-right: 10px;
+        }
+
+        &:first-child .content{
+            border-top-right-radius: 2px;
+            border-top-left-radius: 5px;
+        }            
+    }
+
+    .content {
+        min-height: 32px;
+        padding: 3px 10px;
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        background: #074d0e;
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+        border-bottom-left-radius: 2px;
+        border-top-left-radius: 2px;
+    }
+
+    .messageGroup {
+        margin-bottom: 10px;
+    }
+}

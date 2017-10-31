@@ -7,10 +7,11 @@ const mapStateToProps = (state, ownProps) => {
     const event = state.events[ownProps.eventId];
 
     return {
-        userState: (event.participating.includes(this.props.userId) ? 1 
-            : event.interested.includes(this.props.userId) ? 2
-            : event.invited.includes(this.props.userId) ? 3
-            : event.applicant.includes(this.props.userId) ? 4)
+        userState: (event.participating.includes(state.user.id) ? 1
+            : event.interested.includes(state.user.id) ? 2
+            : event.invited.includes(state.user.id) ? 3
+            : event.applicant.includes(state.user.id) ? 4
+            : 5)
     };
 };
 

@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
         polls: state.polls,
         files: state.files,
         userId: state.user.id,
-        event: state.events
+        event: state.events[ownProps.id]
     }
 };
 
